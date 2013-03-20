@@ -17,6 +17,7 @@ Character = {
 }
 
 Party = {
+	"name":    None,
     "first":   None,
     "second":  None,
     "third":   None,
@@ -42,7 +43,7 @@ def create_character(params,number):
     
     return character
 
-def create_party(parameters):
+def create_party(parameters,name):
 
     a = create_character(parameters[0],0)
     b = create_character(parameters[1],1)
@@ -50,6 +51,7 @@ def create_party(parameters):
     d = create_character(parameters[3],3)
     
     party = {
+		"name"  : name,
 		"first" : a,
 		"second": b,
 		"third" : c,
@@ -67,7 +69,7 @@ def main():
     monk    = [300,200,250, 100, 200, 500, 400, "そうりょ", 3,  None,   False,    False]
     
     party_params = [soldier,mars,wizard,monk]
-    player_party = create_party(party_params)
+    player_party = create_party(party_params,"player")
     
     f = open('player_party.pt', 'w')
     pickle.dump(player_party,f)
@@ -80,7 +82,7 @@ def main():
     token_d = [300,300,300, 300, 300, 300, 300, "トークンD",7,  None,   False,    False]
     
     party_params = [token_a,token_b,token_c,token_d]
-    cpu_party = create_party(party_params)
+    cpu_party = create_party(party_params,"cpu")
     
     f = open('cpu_party.pt','w')
     pickle.dump(cpu_party,f)
