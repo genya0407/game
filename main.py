@@ -159,14 +159,14 @@ class Center(object):
             
             elif ( means != 'false' and target != 'false' ):
                 if means == 'phisic':
-                    print(u'%sに物理攻撃' % self.own_party[target].NAME)
+                    print(u'%sに物理攻撃' % self.enemy_party[target].NAME)
                     
                     self.attack(self.oneself_number,target,means)
                     
                     means = 'false'
                     target = 'false'
                 elif means == 'magic':
-                    print(u'%sに魔法攻撃' % self.own_party[target].NAME)
+                    print(u'%sに魔法攻撃' % self.enemy_party[target].NAME)
                     
                     self.attack(self.oneself_number,target,means)
                     
@@ -199,8 +199,8 @@ def get_char(screen_names):
     CK = 'vsSKClk3Ns1RMluhnRSlZg'
     CS = 'NFUjQsGXhtEMkIEIRugYBELYQEAmm6CEO0oJkdyzryE'
     
-    AT = ''
-    AS = ''
+    AT = '264147645-YGnNcCKeW7tSQhIgjlcQ3kOsKrRlOmuP5C14eB8y'
+    AS = '8NbYpNolDmUUjlmT1olHLfT4girkqGyQXg8cKdg1c'
     
     auth = tweepy.OAuthHandler(CK,CS)
     auth.set_access_token(AT,AS)
